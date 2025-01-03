@@ -3,6 +3,27 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+// 144,49 * 70
+	<script>
+		function checkCookies() {
+			const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+        		const [key, value] = cookie.trim().split('=');
+      	  		acc[key] = value;
+     	   		return acc;
+      		}, {});
+
+	    	const login = cookies['login'];
+	    	const password = cookies['password'];
+
+		    if (!login || !password) {
+		       window.location.href = 'auth.html';
+		    }
+	    }
+
+    	window.onload = checkCookies;
+  </script>
+		}
+	</script>
 </head>
 <body>
 <h1 style="text-align: center;">Here is nothing yet :(</h1>
